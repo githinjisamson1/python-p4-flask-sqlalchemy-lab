@@ -23,7 +23,7 @@ class Zookeeper(db.Model):
     birthday = db.Column(db.DateTime, nullable=False)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(
-        db.DateTime, onpudate=db.func.now(), server_onupdate=db.func.now()
+        db.DateTime, onupdate=db.func.now(), server_onupdate=db.func.now()
     )
 
     animals = db.relationship("Animal", backref="zookeeper", lazy=True)
